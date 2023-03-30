@@ -66,14 +66,10 @@ def check_status_code(code):
         return False
 
 
-def check_word():
-    def check_word(url):
-        res = requests.get(url)
-        word = res.json()[0]
-
-        if 'human' in url:
-            print(word['human'])
-            return True
-        else:
-            print('error')
-            return False
+def check_word(code):
+    if 400 <= code > 500:
+        print(f"success --> {code}")
+        return True
+    else:
+        print(f"yauza --> {code}")
+        return False

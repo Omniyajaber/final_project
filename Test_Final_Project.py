@@ -53,9 +53,9 @@ class TestApi:
         assert check_status_code(res.status_code) == True
 
     def test_check_word(self):
-        url = 'https://api.dictionaryapi.dev/api/v2/entries/en/human'
+        url = 'https://api.dictionaryapi.dev/api/v2/entries/en/omniya'
         res = send_http_request(url)
-        assert check_status_code(res.status_code) == True
+        assert check_word(res.status_code) == False
 
 
 
